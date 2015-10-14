@@ -10,13 +10,6 @@
 
 
     <Grid Background="#FF011826">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="phone480">
                 <VisualStateGroup.Transitions>
@@ -36,7 +29,7 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.BorderBrush>
-        <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300" Grid.RowSpan="5">
+        <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300">
             <SplitView.Pane>
                 <Grid Background="#FF2E3541">
                     <StackPanel x:Name="vswMenu_Copy" Margin="0" d:LayoutOverrides="HorizontalAlignment, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Width="320">
@@ -79,94 +72,46 @@
                         <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Width="40" Height="40"/>
 
                     </Grid>
-                    <Grid x:Name="vswMenu" Margin="5,0" Height="597" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid x:Name="stpHorario" Padding="0"  RenderTransformOrigin="0.5,0.5" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
-                                <ColumnDefinition Width="282*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Grid.RenderTransform>
+                    <VariableSizedWrapGrid x:Name="vswMenu" Margin="5,0">
+                        <StackPanel MaxHeight="120" MinWidth="250" x:Name="stpHorario" Orientation="Horizontal" Margin="0" Padding="0,8" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="Height">
+                            <StackPanel.RenderTransform>
                                 <CompositeTransform/>
-                            </Grid.RenderTransform>
-                            <Image MaxWidth="130"  x:Name="imgHorario" Source="Images/bus-icon_unselected - copia.png" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="10" MinWidth="10" MaxHeight="130"/>
-                            <Grid x:Name="stackPanel" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="TopMargin, BottomMargin, TopPosition, BottomPosition" Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <TextBlock  x:Name="textBlock" Text="Horarios" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock  x:Name="textBlock5"  Text="Muestra los horarios de buses disponibles para el campus ITCR Cartago" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
-                            </Grid>
-                        </Grid>
-                        <Grid x:Name="stpTareas" Padding="0" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
-                                <ColumnDefinition Width="282*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130"  MaxWidth="130" MinHeight="10" MinWidth="10" x:Name="imgConfiguracion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
-                            <Grid x:Name="stackPanel_Copy" Padding="8,0,0,0" Margin="0" Grid.Column="1" d:LayoutOverrides="LeftPosition, RightPosition">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <TextBlock  x:Name="textBlock11" Text="Tareas" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock  x:Name="textBlock13"  Text="Muestra o asigna tareas por realizar con un recordatorio que se mostrará en tu PC" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0,-5,0,0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
-                            </Grid>
-                        </Grid>
-                        <Grid x:Name="stpContactos" Padding="0" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="2">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
-                                <ColumnDefinition Width="282*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130"  MaxWidth="130" MinHeight="10" MinWidth="10" x:Name="imgConfiguracion1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
-                            <Grid x:Name="stackPanel2" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock2" Text="Contactos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" />
-                                <TextBlock x:Name="textBlock7"  Text="Sección para guardar información de compañeros o profesores" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
-                            </Grid>
-                        </Grid>
-                        <Grid x:Name="stpMapa" Padding="0" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="3">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
-                                <ColumnDefinition Width="282*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130" MaxWidth="130" MinHeight="10" MinWidth="10"  x:Name="imgMapa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/map-icon_unselected - copia.png" Margin="0"/>
-                            <Grid x:Name="stackPanel3" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock3" Text="Mapa" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" />
-                                <TextBlock x:Name="textBlock8"  Text="Muestra la locación e información de edificios dentro del campus" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" Grid.Row="1" />
-                            </Grid>
-                        </Grid>
-                        <Grid x:Name="stpInformacion" Margin="0,0.166" Padding="0,8" d:LayoutOverrides="Height, LeftMargin, RightMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Row="4">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
-                                <ColumnDefinition Width="277*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130" MaxWidth="130" MinHeight="10" MinWidth="10"  x:Name="imgInformacion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/about-icon_unselected - copia.png" Margin="0"/>
-                            <Grid x:Name="stackPanel4" Padding="8,0,0,0" Margin="0,0,2,0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock4" Text="Acerca de" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock x:Name="textBlock9"  Text="Información de contacto" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                            </StackPanel.RenderTransform>
+                            <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgHorario" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/bus-icon_unselected - copia.png" Margin="0" Width="60" Height="60"/>
+                            <StackPanel x:Name="stackPanel" Padding="8,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="288">
+                                <TextBlock x:Name="textBlock" Text="Horarios" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" />
+                                <TextBlock x:Name="textBlock5"  Text="Muestra los horarios de buses disponibles para el campus ITCR Cartago" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpTareas" Margin="0" Orientation="Horizontal" Padding="0,8" d:LayoutOverrides="Width, Height">
+                            <Image MaxHeight="80"  MaxWidth="80" MinHeight="20" MinWidth="20" x:Name="imgConfiguracion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Width="60" Height="60"/>
+                            <StackPanel x:Name="stackPanel1" Padding="8,0,0,0" Width="288">
+                                <TextBlock x:Name="textBlock1" Text="Tareas" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" />
+                                <TextBlock x:Name="textBlock6" Text="Muestra o asigna tareas por realizar con un recordatorio que se mostrará en tu PC" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpContactos" Margin="0" Orientation="Horizontal" Padding="0,8" d:LayoutOverrides="Width, Height">
+                            <Image MaxHeight="80"  MaxWidth="80" MinHeight="20" MinWidth="20" x:Name="imgConfiguracion1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Width="60" Height="60"/>
+                            <StackPanel x:Name="stackPanel2" Padding="8,0,0,0" Width="288">
+                                <TextBlock x:Name="textBlock2" Text="Contactos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" />
+                                <TextBlock x:Name="textBlock7"  Text="Sección para guardar información de compañeros o profesores" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpMapa" Margin="0" Orientation="Horizontal" Padding="0,8" d:LayoutOverrides="Width, Height">
+                            <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgMapa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/map-icon_unselected - copia.png" Width="60" Height="60"/>
+                            <StackPanel x:Name="stackPanel3" Padding="8,0,0,0" Width="288">
+                                <TextBlock x:Name="textBlock3" Text="Mapa" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" />
+                                <TextBlock x:Name="textBlock8"  Text="Muestra la locación e información de edificios dentro del campus" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion" Margin="0" Orientation="Horizontal" Padding="0,8">
+                            <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgInformacion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/about-icon_unselected - copia.png" Width="60" Height="60"/>
+                            <StackPanel x:Name="stackPanel4" Padding="8,0,0,0" Width="288">
+                                <TextBlock x:Name="textBlock4" Text="Acerca de" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" />
+                                <TextBlock x:Name="textBlock9"  Text="Información de contacto" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" />
+                            </StackPanel>
+                        </StackPanel>
+                    </VariableSizedWrapGrid>
 
                 </StackPanel>
 
