@@ -117,7 +117,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Grid x:Name="stpHorario" Padding="0,5"  RenderTransformOrigin="0.5,0.5" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition">
+                        <Grid x:Name="stpHorario" Padding="0,5"  RenderTransformOrigin="0.5,0.5" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Tapped="stpHorario_Tapped">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="65*"/>
                                 <ColumnDefinition Width="282*"/>
