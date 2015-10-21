@@ -23,9 +23,35 @@
                     <VisualTransition GeneratedDuration="0"/>
                 </VisualStateGroup.Transitions>
                 <VisualState x:Name="VisualState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="480" />
+                    </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="splitView.(SplitView.DisplayMode)" Value="Overlay"/>
                         <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="False"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock13.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock7.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock8.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock9.(UIElement.Visibility)" Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="Tablet720">
+                <VisualState x:Name="VisualState1">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="480" MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="splitView.(SplitView.DisplayMode)" Value="CompactInline"/>
+                        <Setter Target="btnOpenMenu.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="btnOpenMenu_Copy.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock13.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock7.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock8.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock9.(UIElement.Visibility)" Value="Visible"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -68,8 +94,12 @@
                 </Grid>
             </SplitView.Pane>
             <Grid x:Name="grid" Background="#FFF1F2EB">
-                <StackPanel Margin="0">
-                    <Grid Background="#FF03658C" d:IsLocked="True">
+                <Grid Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*"/>
+                        <RowDefinition Height="73*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Background="#FF03658C" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="257"/>
@@ -79,15 +109,15 @@
                         <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Width="40" Height="40"/>
 
                     </Grid>
-                    <Grid x:Name="vswMenu" Margin="5,0" Height="597" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <Grid x:Name="vswMenu" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="5,1,5,0" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition" Grid.Row="1">
                         <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Grid x:Name="stpHorario" Padding="0"  RenderTransformOrigin="0.5,0.5" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition">
+                        <Grid x:Name="stpHorario" Padding="0,5"  RenderTransformOrigin="0.5,0.5" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="65*"/>
                                 <ColumnDefinition Width="282*"/>
@@ -96,79 +126,79 @@
                             <Grid.RenderTransform>
                                 <CompositeTransform/>
                             </Grid.RenderTransform>
-                            <Image MaxWidth="130"  x:Name="imgHorario" Source="Images/bus-icon_unselected - copia.png" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" MinHeight="10" MinWidth="10" MaxHeight="130"/>
+                            <Image  x:Name="imgHorario" Source="Images/bus-icon_unselected - copia.png" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             <Grid x:Name="stackPanel" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="TopMargin, BottomMargin, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock  x:Name="textBlock" Text="Horarios" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock  x:Name="textBlock5"  Text="Muestra los horarios de buses disponibles para el campus ITCR Cartago" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
+                                <TextBlock  x:Name="textBlock" Text="Horarios" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
+                                <TextBlock  x:Name="textBlock5"  Text="Muestra los horarios de buses disponibles para el campus ITCR Cartago" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
                             </Grid>
                         </Grid>
-                        <Grid x:Name="stpTareas" Padding="0" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="1">
+                        <Grid x:Name="stpTareas" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="65*"/>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130"  MaxWidth="130" MinHeight="10" MinWidth="10" x:Name="imgConfiguracion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
+                            <Image x:Name="imgConfiguracion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel_Copy" Padding="8,0,0,0" Margin="0" Grid.Column="1" d:LayoutOverrides="LeftPosition, RightPosition">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <TextBlock  x:Name="textBlock11" Text="Tareas" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock  x:Name="textBlock13"  Text="Muestra o asigna tareas por realizar con un recordatorio que se mostrará en tu PC" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0,-5,0,0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
+                                <TextBlock  x:Name="textBlock13"  Text="Muestra o asigna tareas por realizar con un recordatorio que se mostrará en tu PC" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0,-5,0,0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
                             </Grid>
                         </Grid>
-                        <Grid x:Name="stpContactos" Padding="0" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="2">
+                        <Grid x:Name="stpContactos" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="2">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="65*"/>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130"  MaxWidth="130" MinHeight="10" MinWidth="10" x:Name="imgConfiguracion1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
+                            <Image x:Name="imgConfiguracion1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel2" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <TextBlock x:Name="textBlock2" Text="Contactos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" />
-                                <TextBlock x:Name="textBlock7"  Text="Sección para guardar información de compañeros o profesores" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
+                                <TextBlock x:Name="textBlock7"  Text="Sección para guardar información de compañeros o profesores" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
                             </Grid>
                         </Grid>
-                        <Grid x:Name="stpMapa" Padding="0" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="3">
+                        <Grid x:Name="stpMapa" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="3">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="65*"/>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130" MaxWidth="130" MinHeight="10" MinWidth="10"  x:Name="imgMapa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/map-icon_unselected - copia.png" Margin="0"/>
+                            <Image  x:Name="imgMapa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/map-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel3" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <TextBlock x:Name="textBlock3" Text="Mapa" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" />
-                                <TextBlock x:Name="textBlock8"  Text="Muestra la locación e información de edificios dentro del campus" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" Grid.Row="1" />
+                                <TextBlock x:Name="textBlock8"  Text="Muestra la locación e información de edificios dentro del campus" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" Grid.Row="1" Visibility="Collapsed" />
                             </Grid>
                         </Grid>
-                        <Grid x:Name="stpInformacion" Margin="0,0.166" Padding="0,8" d:LayoutOverrides="Height, LeftMargin, RightMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Row="4">
+                        <Grid x:Name="stpInformacion" Margin="0,0.166" Padding="0,5" d:LayoutOverrides="Height, LeftMargin, RightMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Row="4">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="65*"/>
                                 <ColumnDefinition Width="277*"/>
                             </Grid.ColumnDefinitions>
-                            <Image MaxHeight="130" MaxWidth="130" MinHeight="10" MinWidth="10"  x:Name="imgInformacion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/about-icon_unselected - copia.png" Margin="0"/>
+                            <Image  x:Name="imgInformacion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/about-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel4" Padding="8,0,0,0" Margin="0,0,2,0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
                                 <TextBlock x:Name="textBlock4" Text="Acerca de" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock x:Name="textBlock9"  Text="Información de contacto" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" />
+                                <TextBlock x:Name="textBlock9"  Text="Información de contacto" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
                             </Grid>
                         </Grid>
                     </Grid>
 
-                </StackPanel>
+                </Grid>
 
             </Grid>
         </SplitView>
