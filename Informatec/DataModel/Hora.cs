@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Informatec.DataModel
+{
+    class Hora
+    {
+        public DateTime hora { get; set; }
+
+        public string horaformat { get; set; }
+
+        public string tiempo { get; set; }
+
+        public bool llegada { get; set; }
+        public bool sabado { get; set; }
+    }
+}

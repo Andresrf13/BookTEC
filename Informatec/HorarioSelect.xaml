@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Informatec.ScheduleBus"
+    x:Class="Informatec.HorarioSelect"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Informatec"
@@ -8,14 +8,25 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="ItemRutas">
-            <StackPanel>
-                <Image x:Name="image" Height="40" Width="40" Source="Images/about-icon_unselected - copia.png"/>
-                <TextBlock x:Name="txtRuta" TextWrapping="Wrap" MaxWidth="200" Text="{Binding Nombre}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" TextAlignment="Center"/>
-                <TextBlock x:Name="txtDesc" TextWrapping="Wrap" MaxWidth="200" Text="{Binding Desc}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" TextAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Width="200" Margin="0" Padding="5">
+                <Image x:Name="image" Height="40" Width="40" Source="Images/about-icon_unselected - copia.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="txthora" TextWrapping="Wrap" MaxWidth="200" Text="{Binding horaformat}" Margin="3" TextAlignment="Center"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
-
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="appBarButton" Label="Horario mañana"/>
+                <AppBarButton x:Name="appBarButton1" Label="Horario Tarde"/>
+                <AppBarButton x:Name="appBarButton2" Label="Horario noche"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton Icon="Accept" Label="recordarme"/>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="Tablet1">
@@ -34,10 +45,6 @@
         </VisualStateManager.VisualStateGroups>
         <Grid Background="#FF011826">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <VisualStateManager.VisualStateGroups>
@@ -85,7 +92,7 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.BorderBrush>
-            <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300" Grid.RowSpan="5">
+            <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300">
                 <SplitView.Pane>
                     <Grid Background="#FF2E3541">
                         <StackPanel x:Name="vswMenu_Copy" Margin="0" d:LayoutOverrides="HorizontalAlignment, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Width="320">
@@ -120,7 +127,8 @@
                     <Grid Margin="0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="7*"/>
-                            <RowDefinition Height="73*"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="69*"/>
                         </Grid.RowDefinitions>
                         <Grid Background="#FF03658C" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
                             <Grid.ColumnDefinitions>
@@ -132,9 +140,10 @@
                             <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Width="40" Height="40"/>
 
                         </Grid>
-                        <GridView SelectionChanged="gvRutas_SelectionChanged"  x:Name="gvRutas" Margin="10" Grid.Row="1" ItemTemplate="{StaticResource ItemRutas}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <ProgressBar x:Name="pbCargaRutas" VerticalAlignment="Center" Margin="15" Grid.Row="1" IsIndeterminate="True"/>
-                        <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,25" d:LayoutOverrides="Height, TopPosition, BottomPosition" Grid.Row="1" VerticalAlignment="Center"/>
+                        <GridView x:Name="gvHoras" Margin="0" Grid.Row="2" ItemTemplate="{StaticResource ItemRutas}"/>
+                        <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" Margin="10,0,0,0" VerticalAlignment="Stretch" Grid.Row="1" d:LayoutOverrides="Height, TopPosition, BottomPosition" OffContent="Ruta hacia el campus" OnContent="Ruta desde del campus"/>
+                        <ProgressBar x:Name="pbCargaRutas" VerticalAlignment="Center" Margin="10,0" Grid.Row="2" IsIndeterminate="True"/>
+                        <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,30" Grid.Row="2" VerticalAlignment="Center"/>
 
                     </Grid>
 
