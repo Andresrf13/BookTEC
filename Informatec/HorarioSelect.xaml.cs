@@ -46,11 +46,13 @@ namespace Informatec
             IEnumerable<ParseObject> results = await query.FindAsync();
             List<Hora> horas = new List<Hora>();
             var culture = new CultureInfo("es-CR");
+            
             foreach (var item in results)
             {
                 Hora _nuevo = new Hora();
                 _nuevo.hora = item.Get<DateTime>("Hora");
                 _nuevo.llegada = item.Get<bool>("LLegada");
+                bool toggle =  toggleSwitch.IsOn;
 
                 _nuevo.horaformat = _nuevo.hora.ToString("t", culture);
                 if (_nuevo.hora.TimeOfDay < TimeSpan.FromHours(12))
@@ -65,10 +67,11 @@ namespace Informatec
                     _nuevo.tiempo = "Noche";
                 }
                 _nuevo.sabado = item.Get<bool>("sabado");
+                _nuevo.visibility = (toggle != _nuevo.llegada) ? Visibility.Visible : Visibility.Collapsed;
                 horas.Add(_nuevo);
             }
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-            {
+            {                
                 gvHoras.Visibility = Visibility.Visible;
                 gvHoras.ItemsSource = horas;                
                 pbCargaRutas.IsIndeterminate = false;
@@ -83,6 +86,19 @@ namespace Informatec
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
-
+        private  void toggleSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+            bool toggle = toggleSwitch.IsOn;
+            List<Hora> horas =  gvHoras.ItemsSource as List<Hora>;
+            if(horas != null)
+            {
+                foreach (var item in horas)
+                {
+                    item.visibility = (item.visibility != Visibility.Visible) ? Visibility.Visible : Visibility.Collapsed;
+                }
+                gvHoras.ItemsSource = horas;
+               
+            }
+        }
     }
 }

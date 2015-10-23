@@ -8,10 +8,14 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="ItemRutas">
-            <StackPanel Orientation="Horizontal" Width="200" Margin="0" Padding="5">
+            <StackPanel Orientation="Horizontal" Width="200" Margin="0" Padding="5" Visibility="{Binding visibility}" >
                 <Image x:Name="image" Height="40" Width="40" Source="Images/about-icon_unselected - copia.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock x:Name="txthora" TextWrapping="Wrap" MaxWidth="200" Text="{Binding horaformat}" Margin="3" TextAlignment="Center"/>
+                <TextBlock x:Name="txthora_Copy" TextWrapping="Wrap" MaxWidth="200" Text="{Binding visibility}" Margin="3" TextAlignment="Center"/>
             </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="HeaderTemplateHoras">
+            <Grid/>
         </DataTemplate>
     </Page.Resources>
     <Page.BottomAppBar>
@@ -140,8 +144,8 @@
                             <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Width="40" Height="40"/>
 
                         </Grid>
-                        <GridView x:Name="gvHoras" Margin="0" Grid.Row="2" ItemTemplate="{StaticResource ItemRutas}"/>
-                        <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" Margin="10,0,0,0" VerticalAlignment="Stretch" Grid.Row="1" d:LayoutOverrides="Height, TopPosition, BottomPosition" OffContent="Ruta hacia el campus" OnContent="Ruta desde del campus"/>
+                        <GridView x:Name="gvHoras" Margin="0" Grid.Row="2" ItemTemplate="{StaticResource ItemRutas}" HeaderTemplate="{StaticResource HeaderTemplateHoras}"/>
+                        <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" Margin="10,0,0,0" VerticalAlignment="Stretch" Grid.Row="1" d:LayoutOverrides="Height, TopPosition, BottomPosition" OffContent="Ruta hacia el campus" OnContent="Ruta desde del campus" Toggled="toggleSwitch_Toggled"/>
                         <ProgressBar x:Name="pbCargaRutas" VerticalAlignment="Center" Margin="10,0" Grid.Row="2" IsIndeterminate="True"/>
                         <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,30" Grid.Row="2" VerticalAlignment="Center"/>
 

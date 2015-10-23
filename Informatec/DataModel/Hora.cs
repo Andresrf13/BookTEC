@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 
 namespace Informatec.DataModel
 {
@@ -16,5 +17,7 @@ namespace Informatec.DataModel
 
         public bool llegada { get; set; }
         public bool sabado { get; set; }
+
+        public Visibility visibility { get; set; }
     }
 }
