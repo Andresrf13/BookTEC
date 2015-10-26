@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Parse;
+using Windows.UI.Core;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,13 +26,16 @@ namespace Informatec
     {
         public MainPage()
         {
+
             this.InitializeComponent();
-          /*  insertCartago();
-            insertSanjose();
-            inserttibas();
-            insertdesampa();
-            insertalajuela();
-            insertheredia(); */
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+            /*  insertCartago();
+              insertSanjose();
+              inserttibas();
+              insertdesampa();
+              insertalajuela();
+              insertheredia(); */
         }
 
         private async void insertheredia()

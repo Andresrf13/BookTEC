@@ -24,7 +24,7 @@
                 </VisualStateGroup.Transitions>
                 <VisualState x:Name="VisualState">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="480" />
+                        <AdaptiveTrigger MinWindowHeight="480" MinWindowWidth="720"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="splitView.(SplitView.DisplayMode)" Value="Overlay"/>
@@ -64,7 +64,7 @@
         </Grid.BorderBrush>
         <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300" Grid.RowSpan="5">
             <SplitView.Pane>
-                <Grid Background="#FF2E3541">
+                <Grid Background="#FF011826">
                     <StackPanel x:Name="vswMenu_Copy" Margin="0" d:LayoutOverrides="HorizontalAlignment, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Width="320">
                         <Button x:Name="btnOpenMenu_Copy" Content="&#xE700;" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Margin="0,0,272,0" d:LayoutOverrides="TopMargin, BottomMargin" Visibility="Collapsed"/>
                         <StackPanel MaxHeight="120" MinWidth="250" x:Name="stpHorario1" Padding="0,8" RenderTransformOrigin="0.5,0.5" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -99,14 +99,14 @@
                         <RowDefinition Height="7*"/>
                         <RowDefinition Height="73*"/>
                     </Grid.RowDefinitions>
-                    <Grid Background="#FF03658C" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
+                    <Grid Background="#FF023859" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="257"/>
+                            <ColumnDefinition Width="47*"/>
+                            <ColumnDefinition Width="133*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Text="BookTEC" x:Name="tbkTitle" FontSize="21.333" FontFamily="Segoe UI Historic" FontWeight="Bold" Foreground="#FFF1F2EB" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Width="40" Height="40"/>
+                        <TextBlock Text="BookTEC" x:Name="tbkTitle" FontSize="21.333" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FFF1F2EB" FontWeight="ExtraBlack" CharacterSpacing="44" OpticalMarginAlignment="TrimSideBearings" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" />
+                        <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Margin="0" BorderThickness="0"/>
 
                     </Grid>
                     <Grid x:Name="vswMenu" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="5,1,5,0" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition" Grid.Row="1">
@@ -126,14 +126,14 @@
                             <Grid.RenderTransform>
                                 <CompositeTransform/>
                             </Grid.RenderTransform>
-                            <Image  x:Name="imgHorario" Source="Images/bus-icon_unselected - copia.png" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="textBlock1" Margin="5" TextWrapping="Wrap" Text="&#xF207; " VerticalAlignment="Center" d:LayoutOverrides="Width" HorizontalAlignment="Center" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="#FFFCC800" FontSize="{ThemeResource TextControlThemeMinWidth}"/>
                             <Grid x:Name="stackPanel" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="TopMargin, BottomMargin, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock  x:Name="textBlock" Text="Horarios" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock  x:Name="textBlock5"  Text="Muestra los horarios de buses disponibles para el campus ITCR Cartago" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
+                                <TextBlock  x:Name="textBlock" Text="Horarios" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" />
+                                <TextBlock  x:Name="textBlock5"  Text="Muestra los horarios de buses disponibles para el campus ITCR Cartago" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontStretch="ExtraCondensed" FontWeight="Light" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
                         </Grid>
                         <Grid x:Name="stpTareas" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="1">
@@ -147,8 +147,8 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock  x:Name="textBlock11" Text="Tareas" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock  x:Name="textBlock13"  Text="Muestra o asigna tareas por realizar con un recordatorio que se mostrará en tu PC" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0,-5,0,0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
+                                <TextBlock  x:Name="textBlock11" Text="Tareas" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontWeight="Bold" />
+                                <TextBlock  x:Name="textBlock13"  Text="Muestra o asigna tareas por realizar con un recordatorio que se mostrará en tu PC" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0,-5,0,0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
                         </Grid>
                         <Grid x:Name="stpContactos" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="2">
@@ -162,8 +162,8 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock2" Text="Contactos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" />
-                                <TextBlock x:Name="textBlock7"  Text="Sección para guardar información de compañeros o profesores" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
+                                <TextBlock x:Name="textBlock2" Text="Contactos" VerticalAlignment="Center" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" FontWeight="Bold" />
+                                <TextBlock x:Name="textBlock7"  Text="Sección para guardar información de compañeros o profesores" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
                         </Grid>
                         <Grid x:Name="stpMapa" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="3">
@@ -177,8 +177,8 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock3" Text="Mapa" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" />
-                                <TextBlock x:Name="textBlock8"  Text="Muestra la locación e información de edificios dentro del campus" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" Grid.Row="1" Visibility="Collapsed" />
+                                <TextBlock x:Name="textBlock3" Text="Mapa" VerticalAlignment="Center" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" FontWeight="Bold" />
+                                <TextBlock x:Name="textBlock8"  Text="Muestra la locación e información de edificios dentro del campus" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
                         </Grid>
                         <Grid x:Name="stpInformacion" Margin="0,0.166" Padding="0,5" d:LayoutOverrides="Height, LeftMargin, RightMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Row="4">
@@ -192,8 +192,8 @@
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock4" Text="Acerca de" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="14.667" FontStyle="Italic" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" />
-                                <TextBlock x:Name="textBlock9"  Text="Información de contacto" FontFamily="Segoe UI Historic" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
+                                <TextBlock x:Name="textBlock4" Text="Acerca de" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontWeight="Bold" />
+                                <TextBlock x:Name="textBlock9"  Text="Información de contacto" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
                         </Grid>
                     </Grid>

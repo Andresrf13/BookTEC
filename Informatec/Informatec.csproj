@@ -90,6 +90,16 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Fonts\Linearicons-Free.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\FontAwesome.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\dustismo.ttf" />
+    <Content Include="Fonts\dustismo_bold.ttf" />
+    <Content Include="Fonts\dustismo_bold_italic.ttf" />
+    <Content Include="Fonts\dustismo_italic.ttf" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -98,17 +108,17 @@
     </Compile>
     <Compile Include="DataModel\Hora.cs" />
     <Compile Include="DataModel\Rutas.cs" />
-    <Compile Include="HorarioSelect.xaml.cs">
+    <Compile Include="Pages\BusSchedule\HorarioSelect.xaml.cs">
       <DependentUpon>HorarioSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Map.xaml.cs">
+    <Compile Include="Pages\Map\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleBus.xaml.cs">
+    <Compile Include="Pages\BusSchedule\ScheduleBus.xaml.cs">
       <DependentUpon>ScheduleBus.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -142,7 +152,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="HorarioSelect.xaml">
+    <Page Include="Pages\BusSchedule\HorarioSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,11 +160,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Map.xaml">
+    <Page Include="Pages\Map\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ScheduleBus.xaml">
+    <Page Include="Pages\BusSchedule\ScheduleBus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

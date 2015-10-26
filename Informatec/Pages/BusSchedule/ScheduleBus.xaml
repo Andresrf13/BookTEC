@@ -8,10 +8,10 @@
     mc:Ignorable="d">
     <Page.Resources>
         <DataTemplate x:Key="ItemRutas">
-            <StackPanel>
-                <Image x:Name="image" Height="40" Width="40" Source="Images/about-icon_unselected - copia.png"/>
-                <TextBlock x:Name="txtRuta" TextWrapping="Wrap" MaxWidth="200" Text="{Binding Nombre}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" TextAlignment="Center"/>
-                <TextBlock x:Name="txtDesc" TextWrapping="Wrap" MaxWidth="200" Text="{Binding Desc}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" TextAlignment="Center"/>
+            <StackPanel Margin="10">
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" FontFamily="/Fonts/Linearicons-Free.ttf#Linearicons-Free"  Text="bus" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" FontSize="66.667" Foreground="#FFC3BB0D" SelectionHighlightColor="#FF28A1EA"/>
+                <TextBlock x:Name="txtRuta" TextWrapping="Wrap" MaxWidth="200" Text="{Binding Nombre}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" TextAlignment="Center" FontWeight="Bold" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo" FontSize="18.667" Foreground="#FF03658C"/>
+                <TextBlock x:Name="txtDesc" TextWrapping="Wrap" MaxWidth="200" Text="{Binding Desc}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" TextAlignment="Center" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo" FontSize="15.333" FontWeight="Light"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
@@ -87,7 +87,7 @@
             </Grid.BorderBrush>
             <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300" Grid.RowSpan="5">
                 <SplitView.Pane>
-                    <Grid Background="#FF2E3541">
+                    <Grid Background="#FF011826">
                         <StackPanel x:Name="vswMenu_Copy" Margin="0" d:LayoutOverrides="HorizontalAlignment, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Width="320">
                             <Button x:Name="btnOpenMenu_Copy" Content="&#xE700;" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Margin="0,0,272,0" d:LayoutOverrides="TopMargin, BottomMargin" Visibility="Collapsed"/>
                             <StackPanel MaxHeight="120" MinWidth="250" x:Name="stpHorario1" Padding="0,8" RenderTransformOrigin="0.5,0.5" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -122,7 +122,7 @@
                             <RowDefinition Height="7*"/>
                             <RowDefinition Height="73*"/>
                         </Grid.RowDefinitions>
-                        <Grid Background="#FF03658C" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
+                        <Grid Background="#FF023859" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="257"/>
@@ -132,9 +132,9 @@
                             <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Width="40" Height="40"/>
 
                         </Grid>
-                        <GridView SelectionChanged="gvRutas_SelectionChanged"  x:Name="gvRutas" Margin="10" Grid.Row="1" ItemTemplate="{StaticResource ItemRutas}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        <ProgressBar x:Name="pbCargaRutas" VerticalAlignment="Center" Margin="15" Grid.Row="1" IsIndeterminate="True"/>
-                        <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,25" d:LayoutOverrides="Height, TopPosition, BottomPosition" Grid.Row="1" VerticalAlignment="Center"/>
+                        <GridView SelectionChanged="gvRutas_SelectionChanged"  x:Name="gvRutas" Margin="3" Grid.Row="1" ItemTemplate="{StaticResource ItemRutas}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ProgressBar x:Name="pbCargaRutas" VerticalAlignment="Center" Margin="15" Grid.Row="1" IsIndeterminate="True" Foreground="#FF049DBF"/>
+                        <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,25" d:LayoutOverrides="Height, TopPosition, BottomPosition" Grid.Row="1" VerticalAlignment="Center" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo" FontSize="18.667"/>
 
                     </Grid>
 

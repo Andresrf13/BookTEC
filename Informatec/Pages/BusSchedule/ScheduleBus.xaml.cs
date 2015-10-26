@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -29,6 +30,27 @@ namespace Informatec
         {
             this.InitializeComponent();
             getRutas();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            currentView.BackRequested += CurrentView_BackRequested;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+            var currentView = SystemNavigationManager.GetForCurrentView();
+            currentView.BackRequested -= CurrentView_BackRequested;
+        }
+
+        private void CurrentView_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+                Frame.GoBack();
         }
 
         private async Task getRutas()

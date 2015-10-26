@@ -1,18 +1,22 @@
 ﻿<Page
-    x:Class="Informatec.HorarioSelect"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Informatec"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:DataModel="using:Informatec.DataModel"
+    x:Class="Informatec.HorarioSelect"
     mc:Ignorable="d">
     <Page.Resources>
-        <DataTemplate x:Key="ItemRutas">
-            <StackPanel Orientation="Horizontal" Width="200" Margin="0" Padding="5" Visibility="{Binding visibility}" >
-                <Image x:Name="image" Height="40" Width="40" Source="Images/about-icon_unselected - copia.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <TextBlock x:Name="txthora" TextWrapping="Wrap" MaxWidth="200" Text="{Binding horaformat}" Margin="3" TextAlignment="Center"/>
-                <TextBlock x:Name="txthora_Copy" TextWrapping="Wrap" MaxWidth="200" Text="{Binding visibility}" Margin="3" TextAlignment="Center"/>
-            </StackPanel>
+        <DataTemplate x:Key="ItemRutas" >
+            <Grid Height="100" Margin="0" Padding="5" Width="230">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="89*"/>
+                    <ColumnDefinition Width="221*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="txtBus" FontFamily="/Fonts/Linearicons-Free.ttf#Linearicons-Free" TextWrapping="Wrap" MaxWidth="200" Margin="0" TextAlignment="Center" Text="clock" FontSize="53.333" Foreground="#FF011826" d:LayoutOverrides="Width, LeftPosition, RightPosition, TopPosition, BottomPosition" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock x:Name="txthora" TextWrapping="Wrap" MaxWidth="200" Text="{Binding horaformat}" Margin="0,5,5,5" TextAlignment="Center" d:LayoutOverrides="TopPosition, BottomPosition" Grid.Column="1" VerticalAlignment="Center" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo" FontSize="18.667" HorizontalAlignment="Left"/>
+            </Grid>
         </DataTemplate>
         <DataTemplate x:Key="HeaderTemplateHoras">
             <Grid/>
@@ -21,9 +25,12 @@
     <Page.BottomAppBar>
         <CommandBar>
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:Name="appBarButton" Label="Horario mañana"/>
-                <AppBarButton x:Name="appBarButton1" Label="Horario Tarde"/>
-                <AppBarButton x:Name="appBarButton2" Label="Horario noche"/>
+                <AppBarButton x:Name="btnmanana" Label="Horario mañana" Click="btnmanana_Click"/>
+                <AppBarButton x:Name="btntarde" Label="Horario tarde" Click="btntarde_Click"/>
+                <AppBarButton x:Name="btnnoche" Label="Horario noche" Click="btnnoche_Click"/>
+                <AppBarButton x:Name="btnall" Label="Todas las horas" Click="btnall_Click"/>
+                <AppBarSeparator/>
+                <AppBarToggleButton x:Name="switchSabados" Label="Horario de sábados" Click="switchSabados_Click"/>
             </CommandBar.SecondaryCommands>
             <CommandBar.Content>
                 <Grid/>
@@ -98,7 +105,7 @@
             </Grid.BorderBrush>
             <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300">
                 <SplitView.Pane>
-                    <Grid Background="#FF2E3541">
+                    <Grid Background="#FF011826">
                         <StackPanel x:Name="vswMenu_Copy" Margin="0" d:LayoutOverrides="HorizontalAlignment, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Width="320">
                             <Button x:Name="btnOpenMenu_Copy" Content="&#xE700;" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Margin="0,0,272,0" d:LayoutOverrides="TopMargin, BottomMargin" Visibility="Collapsed"/>
                             <StackPanel MaxHeight="120" MinWidth="250" x:Name="stpHorario1" Padding="0,8" RenderTransformOrigin="0.5,0.5" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
@@ -134,20 +141,20 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="69*"/>
                         </Grid.RowDefinitions>
-                        <Grid Background="#FF03658C" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
+                        <Grid Background="#FF023859" Margin="0,0,0,-1" d:LayoutOverrides="LeftMargin, RightMargin">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition Width="257"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Horario de buses" x:Name="tbkTitle" FontSize="21.333" FontFamily="Segoe UI Historic" FontWeight="Bold" Foreground="#FFF1F2EB" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="Horario de buses" x:Name="tbkTitle" FontSize="21.333" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo" FontWeight="Bold" Foreground="#FFF1F2EB" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <Button x:Name="btnOpenMenu" Content="&#xE700;" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Width="40" Height="40"/>
 
                         </Grid>
-                        <GridView x:Name="gvHoras" Margin="0" Grid.Row="2" ItemTemplate="{StaticResource ItemRutas}" HeaderTemplate="{StaticResource HeaderTemplateHoras}"/>
-                        <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" Margin="10,0,0,0" VerticalAlignment="Stretch" Grid.Row="1" d:LayoutOverrides="Height, TopPosition, BottomPosition" OffContent="Ruta hacia el campus" OnContent="Ruta desde del campus" Toggled="toggleSwitch_Toggled"/>
-                        <ProgressBar x:Name="pbCargaRutas" VerticalAlignment="Center" Margin="10,0" Grid.Row="2" IsIndeterminate="True"/>
-                        <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,30" Grid.Row="2" VerticalAlignment="Center"/>
+                        <GridView DataContext="Hora"  x:Name="gvHoras" Margin="0" Grid.Row="2" ItemTemplate="{StaticResource ItemRutas}" HeaderTemplate="{StaticResource HeaderTemplateHoras}" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo"/>
+                        <ToggleSwitch x:Name="toggleSwitch" Header="" HorizontalAlignment="Stretch" Margin="10,0,0,0" VerticalAlignment="Stretch" Grid.Row="1" d:LayoutOverrides="Height, TopPosition, BottomPosition" OffContent="Ruta hacia el campus" OnContent="Ruta desde del campus" Toggled="toggleSwitch_Toggled" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo"/>
+                        <ProgressBar x:Name="pbCargaRutas" VerticalAlignment="Center" Margin="10,0" Grid.Row="2" IsIndeterminate="True" Foreground="#FF049DBF"/>
+                        <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,30" Grid.Row="2" VerticalAlignment="Center" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo" FontSize="18.667"/>
 
                     </Grid>
 

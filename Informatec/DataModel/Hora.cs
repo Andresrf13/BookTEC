@@ -17,7 +17,6 @@ namespace Informatec.DataModel
 
         public bool llegada { get; set; }
         public bool sabado { get; set; }
-
-        public Visibility visibility { get; set; }
+       
     }
 }
