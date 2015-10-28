@@ -12,29 +12,148 @@
     <Grid Background="#FF011826">
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="phone480">
                 <VisualStateGroup.Transitions>
                     <VisualTransition GeneratedDuration="0"/>
                 </VisualStateGroup.Transitions>
-                <VisualState x:Name="VisualState">
+                <VisualState x:Name="Portrait">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="480" MinWindowWidth="720"/>
+                        <AdaptiveTrigger MinWindowHeight="700" MinWindowWidth="300"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="splitView.(SplitView.DisplayMode)" Value="Overlay"/>
                         <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="False"/>
-                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Visible"/>
-                        <Setter Target="textBlock13.(UIElement.Visibility)" Value="Visible"/>
-                        <Setter Target="textBlock7.(UIElement.Visibility)" Value="Visible"/>
-                        <Setter Target="textBlock8.(UIElement.Visibility)" Value="Visible"/>
-                        <Setter Target="textBlock9.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock13.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock7.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock8.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock9.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock9_Copy.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock6_Copy5.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock6_Copy6.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock6_Copy7.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock6_Copy8.(TextBlock.FontSize)" Value="53.333"/>
+                        <Setter Target="textBlock6_Copy9.(TextBlock.FontSize)" Value="53.333"/>
                     </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Landscape">
+                    <VisualState.Setters>
+                        <Setter Target="stpMapa.(Grid.Column)" Value="1"/>
+                        <Setter Target="stpInformacion.(Grid.Column)" Value="1"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.Column)" Value="1"/>
+                        <Setter Target="stpMapa.(Grid.Row)" Value="0"/>
+                        <Setter Target="stpMapa.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpInformacion.(Grid.Row)" Value="2"/>
+                        <Setter Target="stpInformacion.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpInformacion.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpMapa.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.Row)" Value="4"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpHorario.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpHorario.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpTareas.(Grid.Row)" Value="2"/>
+                        <Setter Target="stpTareas.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpTareas.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpContactos.(Grid.Row)" Value="4"/>
+                        <Setter Target="stpContactos.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpContactos.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpHorario.(Grid.Column)" Value="0"/>
+                        <Setter Target="stpHorario.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpTareas.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpContactos.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpMapa.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion_Copy.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpHorario.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpTareas.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpContactos.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpMapa.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion_Copy.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpHorario.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,0,0.666999995708466</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpTareas.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0.333000004291534</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpContactos.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0.666999995708466,0,-1</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpMapa.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,0,0.666999995708466</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0.333000004291534,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion_Copy.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,0,0.666999995708466</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpHorario.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpTareas.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpContactos.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpMapa.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion_Copy.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="tbkTitle.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="btnOpenMenu.(Control.FontSize)" Value="21.333"/>
+                        <Setter Target="textBlock6.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock10.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock12.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy1.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock14.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy2.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock16.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy3.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock18.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy4.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock15.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy10.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock19.(TextBlock.FontSize)" Value="18.667"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="300"/>
+                    </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
             <VisualStateGroup x:Name="Tablet720">
@@ -62,7 +181,7 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.BorderBrush>
-        <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300" Grid.RowSpan="5">
+        <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300">
             <SplitView.Pane>
                 <Grid Background="#FF011826">
                     <StackPanel x:Name="vswMenu_Copy" Margin="0" d:LayoutOverrides="HorizontalAlignment, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Width="320">
@@ -71,24 +190,32 @@
                             <StackPanel.RenderTransform>
                                 <CompositeTransform/>
                             </StackPanel.RenderTransform>
-                            <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgHorario1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/bus-icon_selected.png" Margin="0" Width="40" Height="40"/>
+                            <TextBlock x:Name="textBlock6" TextWrapping="Wrap" Text="bus" FontFamily="Fonts/Linearicons-Free.ttf#Linearicons-Free" Foreground="White" FontSize="40" Margin="5"/>
                             <TextBlock x:Name="textBlock10" Text="Horarios" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
                         </StackPanel>
                         <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpTareas1" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <Image MaxHeight="80"  MaxWidth="80" MinHeight="20" MinWidth="20" x:Name="imgConfiguracion2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_selected.png" Width="40" Height="40"/>
+                            <TextBlock x:Name="textBlock6_Copy" TextWrapping="Wrap" Text="&#xF274;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
                             <TextBlock x:Name="textBlock12" Text="Tareas" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
                         </StackPanel>
                         <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpContactos1" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <Image MaxHeight="80"  MaxWidth="80" MinHeight="20" MinWidth="20" x:Name="imgConfiguracion3" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_selected.png" Width="40" Height="40"/>
-                            <TextBlock x:Name="textBlock14" Text="Contactos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
+                            <TextBlock x:Name="textBlock6_Copy1" TextWrapping="Wrap" Text="&#xF073;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                            <TextBlock x:Name="textBlock14" Text="Eventos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
                         </StackPanel>
                         <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpMapa1" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgMapa1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/map-icon_selected.png" Width="40" Height="40"/>
+                            <TextBlock x:Name="textBlock6_Copy2" TextWrapping="Wrap" Text="&#xF279;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
                             <TextBlock x:Name="textBlock16" Text="Mapa" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,0" HorizontalAlignment="Center" />
                         </StackPanel>
                         <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion1" Padding="0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
-                            <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgInformacion1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/about-icon_selected.png" Width="40" Height="40" Canvas.ZIndex="-1"/>
-                            <TextBlock x:Name="textBlock18" Text="Acerca de" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
+                            <TextBlock x:Name="textBlock6_Copy3" TextWrapping="Wrap" Text="&#xF05D;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                            <TextBlock x:Name="textBlock18" Text="Calificaciones" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
+                        </StackPanel>
+                        <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion1_Copy" Padding="0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
+                            <TextBlock x:Name="textBlock6_Copy4" TextWrapping="Wrap" Text="&#xF129;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="15,5,5,5" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="textBlock15" Text="Cuenta" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
+                        </StackPanel>
+                        <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion1_Copy1" Padding="0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
+                            <TextBlock x:Name="textBlock6_Copy10" TextWrapping="Wrap" Text="users" FontFamily="Fonts/Linearicons-Free.ttf#Linearicons-Free" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                            <TextBlock x:Name="textBlock19" Text="Cuenta" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -110,90 +237,110 @@
 
                     </Grid>
                     <Grid x:Name="vswMenu" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="5,1,5,0" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="157*"/>
+                            <ColumnDefinition Width="158*"/>
+                        </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Grid x:Name="stpHorario" Padding="0,5"  RenderTransformOrigin="0.5,0.5" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Tapped="stpHorario_Tapped">
+                        <Grid x:Name="stpHorario" Padding="0,5"  RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0.667" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Tapped="stpHorario_Tapped" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
+                                <ColumnDefinition Width="100*"/>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
 
                             <Grid.RenderTransform>
                                 <CompositeTransform/>
                             </Grid.RenderTransform>
-                            <TextBlock x:Name="textBlock1" Margin="5" TextWrapping="Wrap" Text="&#xF207; " VerticalAlignment="Center" d:LayoutOverrides="Width" HorizontalAlignment="Center" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="#FFFCC800" FontSize="{ThemeResource TextControlThemeMinWidth}"/>
+                            <TextBlock x:Name="textBlock1" Margin="5" TextWrapping="Wrap" Text="&#xF207; " VerticalAlignment="Center" d:LayoutOverrides="Width" HorizontalAlignment="Center" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="#FFFCC800" FontSize="53.333"/>
                             <Grid x:Name="stackPanel" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="TopMargin, BottomMargin, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock  x:Name="textBlock" Text="Horarios" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" />
+                                <TextBlock  x:Name="textBlock" Text="Horarios" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Grid.RowSpan="2" />
                                 <TextBlock  x:Name="textBlock5"  Text="Muestra los horarios de buses disponibles para el campus ITCR Cartago" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontStretch="ExtraCondensed" FontWeight="Light" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
                         </Grid>
-                        <Grid x:Name="stpTareas" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="1">
+                        <Grid x:Name="stpTareas" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition, TopPosition, BottomPosition" Margin="0,0.333" Grid.Row="1" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
+                                <ColumnDefinition Width="100*"/>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
-                            <Image x:Name="imgConfiguracion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel_Copy" Padding="8,0,0,0" Margin="0" Grid.Column="1" d:LayoutOverrides="LeftPosition, RightPosition">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock  x:Name="textBlock11" Text="Tareas" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontWeight="Bold" />
+                                <TextBlock  x:Name="textBlock11" Text="Tareas" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontWeight="Bold" Grid.RowSpan="2" />
                                 <TextBlock  x:Name="textBlock13"  Text="Muestra o asigna tareas por realizar con un recordatorio que se mostrará en tu PC" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0,-5,0,0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
+                            <TextBlock x:Name="textBlock6_Copy5" TextWrapping="Wrap" Text="&#xF274;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="#FF1C77B6" FontSize="53.333" Margin="0" TextAlignment="Center" d:LayoutOverrides="Width, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
-                        <Grid x:Name="stpContactos" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="2">
+                        <Grid x:Name="stpContactos" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0,0.667,0,-1" Grid.Row="2" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
+                                <ColumnDefinition Width="100*"/>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
-                            <Image x:Name="imgConfiguracion1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel2" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock2" Text="Contactos" VerticalAlignment="Center" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" FontWeight="Bold" />
+                                <TextBlock x:Name="textBlock2" Text="Eventos" VerticalAlignment="Center" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" FontWeight="Bold" Grid.RowSpan="2" />
                                 <TextBlock x:Name="textBlock7"  Text="Sección para guardar información de compañeros o profesores" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
+                            <TextBlock x:Name="textBlock6_Copy6" TextWrapping="Wrap" Text="&#xF073;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="#FFD11E1E" FontSize="53.333" Margin="0" TextAlignment="Center" d:LayoutOverrides="Width, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
-                        <Grid x:Name="stpMapa" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition" Margin="0" Grid.Row="3">
+                        <Grid x:Name="stpMapa" Padding="0,5" d:LayoutOverrides="Width, LeftPosition, RightPosition, TopPosition, BottomPosition" Margin="0,0,0,0.667" Grid.Row="3" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
+                                <ColumnDefinition Width="100*"/>
                                 <ColumnDefinition Width="282*"/>
                             </Grid.ColumnDefinitions>
-                            <Image  x:Name="imgMapa" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/map-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel3" Padding="8,0,0,0" Margin="0" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock3" Text="Mapa" VerticalAlignment="Center" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" FontWeight="Bold" />
+                                <TextBlock x:Name="textBlock3" Text="Mapa" VerticalAlignment="Center" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" FontWeight="Bold" Grid.RowSpan="2" />
                                 <TextBlock x:Name="textBlock8"  Text="Muestra la locación e información de edificios dentro del campus" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
                             </Grid>
+                            <TextBlock x:Name="textBlock6_Copy7" TextWrapping="Wrap" Text="&#xF279;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="#FF17993B" FontSize="53.333" Margin="0" TextAlignment="Center" d:LayoutOverrides="Width, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
-                        <Grid x:Name="stpInformacion" Margin="0,0.166" Padding="0,5" d:LayoutOverrides="Height, LeftMargin, RightMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Row="4">
+                        <Grid x:Name="stpInformacion" Margin="0,0.333,0,0" Padding="0,5" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Row="4" Grid.ColumnSpan="2">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="65*"/>
+                                <ColumnDefinition Width="100*"/>
                                 <ColumnDefinition Width="277*"/>
                             </Grid.ColumnDefinitions>
-                            <Image  x:Name="imgInformacion" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/about-icon_unselected - copia.png" Margin="0"/>
                             <Grid x:Name="stackPanel4" Padding="8,0,0,0" Margin="0,0,2,0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
                                 <Grid.RowDefinitions>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock x:Name="textBlock4" Text="Acerca de" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontWeight="Bold" />
+                                <TextBlock x:Name="textBlock4" Text="Calificacion" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontWeight="Bold" Grid.RowSpan="2" />
                                 <TextBlock x:Name="textBlock9"  Text="Información de contacto" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" FontFamily="Fonts/dustismo.ttf#Dustismo" />
+                            </Grid>
+                            <TextBlock x:Name="textBlock6_Copy8" TextWrapping="Wrap" Text="&#xF05D;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="#FF1C14CF" FontSize="53.333" Margin="0" TextAlignment="Center" d:LayoutOverrides="Width, LeftPosition, RightPosition" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                        <Grid x:Name="stpInformacion_Copy" Margin="0,0,0,0.667" Padding="0,5" Grid.Row="5" d:LayoutOverrides="Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100*"/>
+                                <ColumnDefinition Width="277*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="textBlock6_Copy9" TextWrapping="Wrap" Text="users" FontFamily="Fonts/Linearicons-Free.ttf#Linearicons-Free" Foreground="#FF1C14CF" FontSize="53.333" Margin="0" TextAlignment="Center" d:LayoutOverrides="Width, LeftPosition, RightPosition" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Grid x:Name="stackPanel1" Padding="8,0,0,0" Margin="0,0,2,0" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <TextBlock x:Name="textBlock17" Text="Cuenta" FontFamily="Fonts/dustismo.ttf#Dustismo" Foreground="#FF03658C" FontSize="16" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" VerticalAlignment="Center" FontWeight="Bold" Grid.RowSpan="2" />
+                                <TextBlock x:Name="textBlock9_Copy"  Text="Mi informacion" Foreground="#FF03658C" FontSize="13.333" TextWrapping="Wrap" TextAlignment="DetectFromContent" Margin="0" FontFamily="Fonts/dustismo.ttf#Dustismo" d:LayoutOverrides="LeftPosition, RightPosition" Grid.Row="1" Visibility="Collapsed" />
                             </Grid>
                         </Grid>
                     </Grid>

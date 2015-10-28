@@ -17,21 +17,7 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="Tablet1">
-                <VisualState x:Name="VisualState3">
-                    <VisualState.Setters>
-                        <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
-                        <Setter Target="splitView.(SplitView.DisplayMode)" Value="CompactInline"/>
-                        <Setter Target="btnOpenMenu.(UIElement.Visibility)" Value="Collapsed"/>
-                        <Setter Target="btnOpenMenu_Copy.(UIElement.Visibility)" Value="Visible"/>
-                    </VisualState.Setters>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="480" MinWindowWidth="720"/>
-                    </VisualState.StateTriggers>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+      
         <Grid Background="#FF011826">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -50,13 +36,7 @@
                             <AdaptiveTrigger MinWindowHeight="480" />
                         </VisualState.StateTriggers>
                         <VisualState.Setters>
-                            <Setter Target="splitView.(SplitView.DisplayMode)" Value="Overlay"/>
-                            <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="False"/>
-                            <Setter Target="textBlock5.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock13.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock7.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock8.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock9.(UIElement.Visibility)" Value="Visible"/>
+                            
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -66,15 +46,7 @@
                             <AdaptiveTrigger MinWindowHeight="480" MinWindowWidth="720"/>
                         </VisualState.StateTriggers>
                         <VisualState.Setters>
-                            <Setter Target="splitView.(SplitView.DisplayMode)" Value="CompactInline"/>
-                            <Setter Target="btnOpenMenu.(UIElement.Visibility)" Value="Collapsed"/>
-                            <Setter Target="btnOpenMenu_Copy.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
-                            <Setter Target="textBlock5.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock13.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock7.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock8.(UIElement.Visibility)" Value="Visible"/>
-                            <Setter Target="textBlock9.(UIElement.Visibility)" Value="Visible"/>
+                           
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
@@ -87,31 +59,39 @@
             </Grid.BorderBrush>
             <SplitView x:Name="splitView" Margin="0" d:LayoutOverrides="LeftPosition, RightPosition" BorderBrush="#FF0E0E0E" OpenPaneLength="300" Grid.RowSpan="5">
                 <SplitView.Pane>
-                    <Grid Background="#FF011826">
-                        <StackPanel x:Name="vswMenu_Copy" Margin="0" d:LayoutOverrides="HorizontalAlignment, Height, LeftPosition, RightPosition, TopPosition, BottomPosition" Width="320">
-                            <Button x:Name="btnOpenMenu_Copy" Content="&#xE700;" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Margin="0,0,272,0" d:LayoutOverrides="TopMargin, BottomMargin" Visibility="Collapsed"/>
-                            <StackPanel MaxHeight="120" MinWidth="250" x:Name="stpHorario1" Padding="0,8" RenderTransformOrigin="0.5,0.5" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Grid Background="#FF011826" Margin="5,0">
+                        <StackPanel x:Name="vswMenu_Copy2" Margin="0,0,-20,0" Width="320" d:LayoutOverrides="HorizontalAlignment, Height, TopPosition, BottomPosition">
+                            <Button x:Name="btnOpenMenu_Copy2" Content="&#xE700;" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontWeight="Bold" FontSize="26.667" Background="{x:Null}" Foreground="White" Click="btnOpenMenu_Click" Margin="0,0,272,0" d:LayoutOverrides="TopMargin, BottomMargin" Visibility="Collapsed"/>
+                            <StackPanel MaxHeight="120" MinWidth="250" x:Name="stpHorario3" Padding="0,8" RenderTransformOrigin="0.5,0.5" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                                 <StackPanel.RenderTransform>
                                     <CompositeTransform/>
                                 </StackPanel.RenderTransform>
-                                <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgHorario1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/bus-icon_selected.png" Margin="0" Width="40" Height="40"/>
-                                <TextBlock x:Name="textBlock10" Text="Horarios" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
+                                <TextBlock x:Name="textBlock7" TextWrapping="Wrap" Text="bus" FontFamily="Fonts/Linearicons-Free.ttf#Linearicons-Free" Foreground="White" FontSize="40" Margin="5"/>
+                                <TextBlock x:Name="textBlock8" Text="Horarios" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
                             </StackPanel>
-                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpTareas1" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                <Image MaxHeight="80"  MaxWidth="80" MinHeight="20" MinWidth="20" x:Name="imgConfiguracion2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_selected.png" Width="40" Height="40"/>
-                                <TextBlock x:Name="textBlock12" Text="Tareas" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
+                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpTareas3" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <TextBlock x:Name="textBlock6_Copy5" TextWrapping="Wrap" Text="&#xF274;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                                <TextBlock x:Name="textBlock9" Text="Tareas" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
                             </StackPanel>
-                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpContactos1" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                <Image MaxHeight="80"  MaxWidth="80" MinHeight="20" MinWidth="20" x:Name="imgConfiguracion3" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/setting-icon_selected.png" Width="40" Height="40"/>
-                                <TextBlock x:Name="textBlock14" Text="Contactos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
+                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpContactos3" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <TextBlock x:Name="textBlock6_Copy6" TextWrapping="Wrap" Text="&#xF073;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                                <TextBlock x:Name="textBlock11" Text="Eventos" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,-1" HorizontalAlignment="Center" />
                             </StackPanel>
-                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpMapa1" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgMapa1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/map-icon_selected.png" Width="40" Height="40"/>
-                                <TextBlock x:Name="textBlock16" Text="Mapa" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,0" HorizontalAlignment="Center" />
+                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpMapa3" Padding="0,8" d:LayoutOverrides="Width" Margin="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <TextBlock x:Name="textBlock6_Copy7" TextWrapping="Wrap" Text="&#xF279;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                                <TextBlock x:Name="textBlock13" Text="Mapa" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" Margin="10,0,0,0" HorizontalAlignment="Center" />
                             </StackPanel>
-                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion1" Padding="0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
-                                <Image MaxHeight="80" MaxWidth="80" MinHeight="20" MinWidth="20"  x:Name="imgInformacion1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/about-icon_selected.png" Width="40" Height="40" Canvas.ZIndex="-1"/>
-                                <TextBlock x:Name="textBlock18" Text="Acerca de" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
+                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion3" Padding="0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
+                                <TextBlock x:Name="textBlock6_Copy8" TextWrapping="Wrap" Text="&#xF05D;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                                <TextBlock x:Name="textBlock17" Text="Calificaciones" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
+                            </StackPanel>
+                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion1_Copy" Padding="0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
+                                <TextBlock x:Name="textBlock6_Copy4" TextWrapping="Wrap" Text="&#xF129;" FontFamily="Fonts/FontAwesome.otf#FontAwesome" Foreground="White" FontSize="40" Margin="15,5,5,5" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="textBlock15" Text="Cuenta" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
+                            </StackPanel>
+                            <StackPanel MaxHeight="120" MinWidth="250"  x:Name="stpInformacion1_Copy2" Padding="0,8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" Orientation="Horizontal">
+                                <TextBlock x:Name="textBlock6_Copy10" TextWrapping="Wrap" Text="users" FontFamily="Fonts/Linearicons-Free.ttf#Linearicons-Free" Foreground="White" FontSize="40" Margin="5" TextAlignment="Center"/>
+                                <TextBlock x:Name="textBlock1" Text="Cuenta" VerticalAlignment="Center" FontFamily="Segoe UI Historic" Foreground="#FFF1F2EB" FontSize="18.667" FontStyle="Italic" HorizontalAlignment="Center" Margin="10,0,0,0" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -137,7 +117,7 @@
                         <TextBlock x:Name="txtCargando" TextWrapping="Wrap" Text="Cargando" HorizontalAlignment="Center" Margin="0,0,0,25" d:LayoutOverrides="Height, TopPosition, BottomPosition" Grid.Row="1" VerticalAlignment="Center" FontFamily="ms-appx:/Fonts/dustismo.ttf#Dustismo" FontSize="18.667"/>
 
                     </Grid>
-
+                    
                 </Grid>
             </SplitView>
         </Grid>
