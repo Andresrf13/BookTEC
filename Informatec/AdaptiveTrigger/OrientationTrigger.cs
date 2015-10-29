@@ -12,7 +12,7 @@ namespace Informatec.AdaptiveTrigger
     {
         public OrientationTrigger()
         {                        
-           // this.Orientation = ApplicationView.GetForCurrentView().Orientation;
+           //this.Orientation = ApplicationView.GetForCurrentView().Orientation;
            SetActive(ApplicationView.GetForCurrentView().Orientation.Equals(this.Orientation));
             System.Diagnostics.Debug.WriteLine(this.Orientation +" This");
             System.Diagnostics.Debug.WriteLine(ApplicationView.GetForCurrentView().Orientation);
