@@ -5,6 +5,7 @@
     xmlns:local="using:Informatec"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:t="using:Informatec.AdaptiveTrigger"
     mc:Ignorable="d">
 
 
@@ -14,13 +15,11 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="phone480">
-                <VisualStateGroup.Transitions>
-                    <VisualTransition GeneratedDuration="0"/>
-                </VisualStateGroup.Transitions>
+            <VisualStateGroup x:Name="Phone_4">
                 <VisualState x:Name="Portrait">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="700" MinWindowWidth="300"/>
+                        <AdaptiveTrigger/>
+                        <t:OrientationTrigger Orientation="Portrait" />
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="splitView.(SplitView.DisplayMode)" Value="Overlay"/>
@@ -152,14 +151,15 @@
                         <Setter Target="textBlock19.(TextBlock.FontSize)" Value="18.667"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="300"/>
+                        <AdaptiveTrigger MinWindowHeight="0"/>
+                        <t:OrientationTrigger Orientation="Landscape" />
                     </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
             <VisualStateGroup x:Name="Tablet720">
                 <VisualState x:Name="VisualState1">
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="480" MinWindowWidth="720"/>
+                        <AdaptiveTrigger MinWindowHeight="1500" MinWindowWidth="1500"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="splitView.(SplitView.DisplayMode)" Value="CompactInline"/>
@@ -172,6 +172,153 @@
                         <Setter Target="textBlock8.(UIElement.Visibility)" Value="Visible"/>
                         <Setter Target="textBlock9.(UIElement.Visibility)" Value="Visible"/>
                     </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup x:Name="Phone_6">
+                <VisualState x:Name="Portrait6">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="850" MinWindowWidth="0"/>
+                        <t:OrientationTrigger Orientation="Portrait" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="splitView.(SplitView.DisplayMode)" Value="Overlay"/>
+                        <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="False"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock13.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock7.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock8.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock9.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock9_Copy.(UIElement.Visibility)" Value="Visible"/>
+                        <Setter Target="textBlock1.(TextBlock.FontSize)" Value="66.667"/>
+                        <Setter Target="textBlock6_Copy5.(TextBlock.FontSize)" Value="66.667"/>
+                        <Setter Target="textBlock6_Copy6.(TextBlock.FontSize)" Value="66.667"/>
+                        <Setter Target="textBlock6_Copy7.(TextBlock.FontSize)" Value="66.667"/>
+                        <Setter Target="textBlock6_Copy8.(TextBlock.FontSize)" Value="66.667"/>
+                        <Setter Target="textBlock6_Copy9.(TextBlock.FontSize)" Value="66.667"/>
+                        <Setter Target="textBlock.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="textBlock11.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="textBlock2.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="textBlock3.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="textBlock4.(Grid.RowSpan)" Value="1"/>
+                        <Setter Target="textBlock17.(Grid.RowSpan)" Value="1"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Landscape6">
+                    <VisualState.Setters>
+                        <Setter Target="stpMapa.(Grid.Column)" Value="1"/>
+                        <Setter Target="stpInformacion.(Grid.Column)" Value="1"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.Column)" Value="1"/>
+                        <Setter Target="stpMapa.(Grid.Row)" Value="0"/>
+                        <Setter Target="stpMapa.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpInformacion.(Grid.Row)" Value="2"/>
+                        <Setter Target="stpInformacion.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpInformacion.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpMapa.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.Row)" Value="4"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpInformacion_Copy.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpHorario.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpHorario.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpTareas.(Grid.Row)" Value="2"/>
+                        <Setter Target="stpTareas.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpTareas.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpContactos.(Grid.Row)" Value="4"/>
+                        <Setter Target="stpContactos.(Grid.RowSpan)" Value="2"/>
+                        <Setter Target="stpContactos.(Grid.ColumnSpan)" Value="1"/>
+                        <Setter Target="stpHorario.(Grid.Column)" Value="0"/>
+                        <Setter Target="stpHorario.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpTareas.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpContactos.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpMapa.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion_Copy.(FrameworkElement.HorizontalAlignment)" Value="Center"/>
+                        <Setter Target="stpHorario.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpTareas.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpContactos.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpMapa.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion_Copy.(Grid.Padding)">
+                            <Setter.Value>
+                                <Thickness>0,5</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpHorario.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,0,0.666999995708466</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpTareas.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0.333000004291534</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpContactos.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0.666999995708466,0,-1</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpMapa.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,0,0.666999995708466</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0.333000004291534,0,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpInformacion_Copy.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>0,0,0,0.666999995708466</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="stpHorario.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpTareas.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpContactos.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpMapa.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="stpInformacion_Copy.(FrameworkElement.VerticalAlignment)" Value="Center"/>
+                        <Setter Target="tbkTitle.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="btnOpenMenu.(Control.FontSize)" Value="21.333"/>
+                        <Setter Target="textBlock6.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock10.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock12.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy1.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock14.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy2.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock16.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy3.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock18.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy4.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock15.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock6_Copy10.(TextBlock.FontSize)" Value="18.667"/>
+                        <Setter Target="textBlock19.(TextBlock.FontSize)" Value="18.667"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="500"/>
+                        <t:OrientationTrigger Orientation="Landscape" />
+                    </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>

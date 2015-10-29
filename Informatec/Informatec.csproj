@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="DataModel\Hora.cs" />
     <Compile Include="DataModel\Rutas.cs" />
+    <Compile Include="AdaptiveTrigger\OrientationTrigger.cs" />
     <Compile Include="Pages\BusSchedule\HorarioSelect.xaml.cs">
       <DependentUpon>HorarioSelect.xaml</DependentUpon>
     </Compile>
