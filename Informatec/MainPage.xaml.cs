@@ -26,7 +26,7 @@ namespace Informatec
     {
         public MainPage()
         {
-
+            
             this.InitializeComponent();
             var currentView = SystemNavigationManager.GetForCurrentView();
             currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
